@@ -1,6 +1,9 @@
 .chores {
     color: #ff4f33;
 }
+p{
+    color: yellow;
+}
 
 .doneChores {
     color: #3c79b8;

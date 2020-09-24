@@ -1,14 +1,39 @@
-<div class="chores">
+<div class="chores" >
     <h3>Chores</h3>
     <ul>
         <li *ngFor = 'let chore of chores'>{{chore}}</li>
     </ul>
+    <p *ngIf= 'chores.length > finishedChores.length'> Work Harder!</p>
 </div>
 <hr>
-<div class="doneChores">
+<div class="doneChores" *ngIf = 'chores.length===0 ; else noAllowance'>
+   
     <h3>Done Chores</h3>
     <ul>
         <li *ngFor = 'let done of finishedChores'>{{done}}</li>
     </ul>
+    <img targetImage>
 </div>
+<ng-template #noAllowance>
+    <h3><p>No allowance yet.</p></h3>
+ </ng-template>
+
+
 <hr>
+
+
+<!-- <div class='movies' *ngIf ="movies.length > 3; else needMoreMovies">
+    <h3>Movies to Watch</h3>
+    <ol>
+       <li *ngFor ="let movie of movies">{{movie}}</li>
+    </ol>
+ </div>
+ 
+ <ng-template #needMoreMovies>
+    <div class='movies'>
+       <h3>Not Enough Movies!</h3>
+       <p>You only have {{movies.length}} movies on your watch list!</p>
+       <p>What's up with that?</p>
+       <p>You need to purchase expensive popcorn more often.</p>
+    </div>
+ </ng-template> -->
